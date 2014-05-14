@@ -5,7 +5,12 @@
 
 <article class="{{post_class}}">
 
-    <h1><a href="{{url}}">{{title}}</a></h1>
+    <h1>
+    	<span class="meta"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time></span>
+    	<div class="title">
+	    	<a href="{{url}}">{{title}}</a>
+	    </div>
+    </h1>
 
     <div class="post-content"><p>{{excerpt}}&hellip;</p></div>
     
