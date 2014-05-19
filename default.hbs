@@ -1,14 +1,27 @@
 <!DOCTYPE html>
-<html>
+{{#if language}}
+  <html lang="{{language}}">
+{{else}}
+  <html>
+{{/if}}
 <head>
 
   {{! DOCUMENT SETINGS }}
   <meta charset="UTF-8" />
+  {{#if language}}
+    <meta name="language" content="{{language}}" />
+  {{/if}}
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
   {{! PAGE META }}
   <title>{{meta_title}}</title>
   <meta name="description" content="{{meta_description}}" />
+  {{#post}}
+    {{#if author}}
+      <meta name="author" content="{{author}}" />
+      <meta name="keywords" content="{{tags prefix='' separator=',' autolink='false'}}" />
+    {{/if}}
+  {{/post}}
   
   <meta name="HandheldFriendly" content="True" />
   <meta name="viewport" content="width=device-width" />
