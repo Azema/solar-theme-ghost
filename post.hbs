@@ -1,26 +1,26 @@
 {{!< default}}
 
-<article class="{{post_class}}">
+<article class="{{post_class}}" itemscope itemtype="http://schema.org/Article">
     {{#post}}
 
         <span class="post-meta">
-            <time datetime="{{date format="YYYY-MM-DD"}}">{{date format='DD MMM YYYY'}}</time> {{tags prefix="on " separator=" | "}}
+            <time datetime="{{date format="YYYY-MM-DD"}}" itemprop="datePublished" content="{{date format="YYYY-MM-DD"}}">{{date format='DD MMM YYYY'}}</time> {{tags prefix="on " separator=" | "}}
         </span>
         
-        <h1><a href="{{ url }}">{{ title }}</a></h1>
+        <h1><a href="{{ url }}" itemprop="url">{{ title }}</a></h1>
     
-        <div class="post-content">{{ content }}</div>
+        <div class="post-content" itemprop="articleBody">{{ content }}</div>
     
         <!--<p class="meta">Posted on <span class="postdate">{{date format="MMM Do, YYYY"}}</span></p>-->
     
         <footer class="post-footer">
     
-            <section class="author">
-                <h4>{{author.name}}</h4>
+            <section class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+                <h4 itemprop="name">{{author.name}}</h4>
                 <p>{{author.bio}}</p>
                 <ul class="author-meta clearfix">
                     {{#if author.location}}<li>{{author.location}}</li>{{/if}}
-                    {{#if author.website}}<li><a href="{{author.website}}">{{author.website}}</a></li>{{/if}}
+                    {{#if author.website}}<li><a href="{{author.website}}" itemprop="url">{{author.website}}</a></li>{{/if}}
                 </ul>
                 <a href="https://plus.google.com/u/0/+NICKNAME?rel=author"></a>
             </section>
