@@ -8,9 +8,6 @@
 
   {{! DOCUMENT SETINGS }}
   <meta charset="UTF-8" />
-  {{#if language}}
-    <meta name="language" content="{{language}}" />
-  {{/if}}
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
   {{! PAGE META }}
@@ -51,7 +48,11 @@
     {{#if @blog.logo}}
       <a id="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" /></a>
     {{else}}
-      <h1><a href="{{@blog.url}}"><i class="icon-sun"></i> {{@blog.title}}</a></h1>
+      {{#if post}}
+        <a class="blog-logo" href="{{@blog.url}}"><i class="icon-sun"></i> <span class="blog-title">{{@blog.title}}</span></a>
+      {{else}}
+        <h1><a href="{{@blog.url}}"><i class="icon-sun"></i> {{@blog.title}}</a></h1>
+      {{/if}}
     {{/if}}
     <p>{{@blog.description}}</p>
   </header>
@@ -62,17 +63,17 @@
 
       <nav>
         <ul>
-          <li><a href="{{@blog.url}}">Home</a></li>
-          <li><a href="http://twitter.com/NICKNAME">Twitter</a></li>
-          <li><a href="https://github.com/NICKNAME">Github</a></li>
-          <li><a href="{{@blog.url}}/rss/">RSS Feed</a></li>
+          <li><a href="{{@blog.url}}" title="Home">Home</a></li>
+          <li><a href="http://twitter.com/NICKNAME" title="Twitter page">Twitter</a></li>
+          <li><a href="https://github.com/NICKNAME" title="Github page">Github</a></li>
+          <li><a href="{{@blog.url}}/rss/" title="RSS feed">RSS Feed</a></li>
         </ul>
       </nav>
 
       {{#post}}
       {{#if author}}
         <div class="bio">
-          <img class="avatar" src="{{author.image}}" />
+          <img class="avatar" src="{{author.image}}" alt="avatar" />
           <h3>{{author.name}}</h3>
           <p>{{author.bio}}</p>
         </div>
