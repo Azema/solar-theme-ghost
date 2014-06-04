@@ -118,11 +118,14 @@ h3 {
     width: 500px;
     margin: 40px auto 50px auto;
 }
-#header h1 {
+#header h1,
+#header span.blog-title {
     font-size: 32px;
     margin-bottom: 4px;
 }
-#header h1 a {
+#header a {color:#cb4b16;font-size:32px;margin-bottom:4px;}
+#header h1 a,
+#header a {
     border: none;
 }
 
@@ -198,14 +201,14 @@ article {
     margin-bottom: 40px;
 }
 
-article h1 {
+article h1, article h2 {
     font-size: 17px;
     margin: 0 0 10px 0;
 }
-article h1 a {
+article h1 a, article h2 a {
     border: none;
 }
-article h1 a.anchor {
+article h1 a.anchor, article h2 a.anchor {
     margin-left: 8px;
 }
 
@@ -228,10 +231,10 @@ article .meta {
     text-align: center;
     margin-right: 5px;
 }
-article h1 {
+article h1, article h2 {
     display: table;
 }
-article h1 .title {
+article h1 .title, article h2 .title {
     display: table-cell;
     vertical-align: middle;
 }
